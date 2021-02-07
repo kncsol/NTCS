@@ -3,7 +3,7 @@ info:
   description: |
     NTCS administrator OpenAPIs.
   version: 1.0.0-oas3
-  title: NTCS administrator - Account Management
+  title: NTCS administrator - System Management/Code
   contact:
     email: contact@examples.com
   license:
@@ -17,7 +17,7 @@ tags:
 
 paths:
 #
-# �����ڵ�
+# 공통코드 관리
 #
   /management/code:
     post:
@@ -47,21 +47,23 @@ paths:
       parameters:
         - in: query
           name: langType
+          description: '언어 (기본값: KOR)'
           required: true
           schema:
-            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/LangType'
-            default: 'KOR'
+            type: string
+            default: KOR
 
         - in: query
           name: commonGroupCd
           required: true
           schema:
-            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/CommonGroupCd'
+            type: string
+
         - in: query
           name: commonCd
           required: true
           schema:
-            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/CommonCd'
+            type: string
           
         - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
 
@@ -87,16 +89,17 @@ paths:
       parameters:
         - in: query
           name: langType
+          description: '언어 (기본값: KOR)'
           required: true
           schema:
-            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/LangType'
-            default: 'KOR'
+            type: string
+            default: KOR
             
         - in: query
           name: commonGroupCd
           required: true
           schema:
-            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/CommonGroupCd'
+            type: string
             
         - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
 
