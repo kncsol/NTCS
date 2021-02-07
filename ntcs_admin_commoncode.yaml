@@ -1,0 +1,145 @@
+openapi: 3.0.0
+info:
+  description: |
+    NTCS administrator OpenAPIs.
+  version: 1.0.0-oas3
+  title: NTCS administrator - Account Management
+  contact:
+    email: contact@examples.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  - url: 'www.examples.com/admin/v1'
+tags:
+  - name: 공통코드
+    description: 공통코드조회
+
+paths:
+#
+# 공통코드
+#
+  /management/code:
+    post:
+      tags:
+      - 공통코드
+      summary: '공통코드 등록'
+      operationId: addCommonCode
+      parameters:
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommonCodeRequestData'
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
+        '408':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
+    put:
+      tags:
+      - 공통코드   
+      summary: '공통코드 수정'
+      operationId: updateAccount
+      parameters:
+        - in: query
+          name: langType
+          required: true
+          schema:
+            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/LangType'
+            
+        - in: query
+          name: commonGroupCd
+          required: true
+          schema:
+            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/CommonGroupCd'
+        - in: query
+          name: commonCd
+          required: true
+          schema:
+            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/CommonCd'
+          
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommonCodeRequestData'
+
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
+        '408':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
+    get:
+      tags:
+      - 공통코드   
+      summary: '코드그룹별 공통코드 조회'
+      description: '코드그룹에 대한 공통코드 정보를 조회한다.'
+      operationId: inquiryAccountByType
+      parameters:
+        - in: query
+          name: langType
+          required: true
+          schema:
+            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/LangType'
+            
+        - in: query
+          name: commonGroupCd
+          required: true
+          schema:
+            $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/CommonGroupCd'
+            
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/problem+json:
+             schema:
+              $ref: '#/components/schemas/CommonCodeResponseData'          
+        '400':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
+        '408':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
+
+components:
+  schemas:
+    TransactionId:
+      type: string
+      description: 'Unique string used to identify the request message. Used for message
+        tracking purposes'
+    TransactionTimeStamp:
+      type: string
+      description: Represents both a date and a time (yyyyMMddHHmmss.ns)
+      example: '20210101000000.123'
+#
+#
+#
+    CommonCodeData:
+      description: 회원관리 마스터 데이터
+      type: object
+      properties:
+        transId:
+          $ref: '#/components/schemas/TransactionId'
+        transTimeStamp:
+          $ref: '#/components/schemas/TransactionTimeStamp'
+        messageBody:
+          type: object
+          properties:
+            message_data:
+              type: array
+              items: 
+                $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/components/schemas/TsyCodeDetail'
+    
+    CommonCodeRequestData:
+      $ref: '#/components/schemas/CommonCodeData'
+    CommonCodeResponseData:
+      $ref: '#/components/schemas/CommonCodeData'
