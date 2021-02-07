@@ -12,18 +12,18 @@ info:
 servers:
   - url: 'www.examples.com/admin/v1'
 tags:
-  - name: °øÅëÄÚµå
-    description: °øÅëÄÚµåÁ¶È¸
+  - name: ê³µí†µì½”ë“œ
+    description: ê³µí†µì½”ë“œ ê´€ë¦¬
 
 paths:
 #
-# °øÅëÄÚµå
+# ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 #
   /management/code:
     post:
       tags:
-      - °øÅëÄÚµå
-      summary: '°øÅëÄÚµå µî·Ï'
+      - ê³µí†µì½”ë“œ
+      summary: 'ê³µí†µì½”ë“œ ë“±ë¡'
       operationId: addCommonCode
       parameters:
         - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
@@ -41,8 +41,8 @@ paths:
           $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
     put:
       tags:
-      - °øÅëÄÚµå   
-      summary: '°øÅëÄÚµå ¼öÁ¤'
+      - ê³µí†µì½”ë“œ  
+      summary: 'ê³µí†µì½”ë“œ ìˆ˜ì •'
       operationId: updateAccount
       parameters:
         - in: query
@@ -50,7 +50,8 @@ paths:
           required: true
           schema:
             $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/LangType'
-            
+            default: 'KOR'
+
         - in: query
           name: commonGroupCd
           required: true
@@ -79,9 +80,9 @@ paths:
           $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
     get:
       tags:
-      - °øÅëÄÚµå   
-      summary: 'ÄÚµå±×·ìº° °øÅëÄÚµå Á¶È¸'
-      description: 'ÄÚµå±×·ì¿¡ ´ëÇÑ °øÅëÄÚµå Á¤º¸¸¦ Á¶È¸ÇÑ´Ù.'
+      - ê³µí†µì½”ë“œ 
+      summary: 'ì½”ë“œê·¸ë£¹ë³„ ê³µí†µì½”ë“œ ì¡°íšŒ'
+      description: 'ì½”ë“œê·¸ë£¹ì— ëŒ€í•œ ê³µí†µì½”ë“œ ì •ë³´ë¥¼ ê²€ìƒ‰í•œë‹¤. ê³µí†µì½”ë“œ ì „ì²´ ì»¬ëŸ¼ì •ë³´ê°€ ê²€ìƒ‰ëœë‹¤.'
       operationId: inquiryAccountByType
       parameters:
         - in: query
@@ -89,6 +90,7 @@ paths:
           required: true
           schema:
             $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/LangType'
+            default: 'KOR'
             
         - in: query
           name: commonGroupCd
@@ -124,7 +126,7 @@ components:
 #
 #
     CommonCodeData:
-      description: È¸¿ø°ü¸® ¸¶½ºÅÍ µ¥ÀÌÅÍ
+      description: ê³µí†µì½”ë“œ ë§ˆìŠ¤í„° ë°ì´í„°
       type: object
       properties:
         transId:
