@@ -1,0 +1,3075 @@
+---
+openapi: 3.0.0
+info:
+  title: NTCS Object Data
+  description: |
+    NTCS Object data type for Service Based Interfaces'
+  version: 1.0.0-oas3
+servers:
+- url: /
+paths: {}
+components:
+  schemas:
+    AccountGroupId:
+      type: string
+      description: 계정그롭ID
+    AccountLock:
+      type: string
+      description: 계정잠금여부
+    AccountId:
+      type: string
+      description: 회원계정ID
+    AccountPassword:
+      type: string
+      description: 회원암호
+    AccountType:
+      type: string
+      description: 회원유형코드
+    AccountStat:
+      type: string
+      description: 회원상태
+    AccountNo:
+      type: string
+      description: 회의계정번호
+    AddrDtl:
+      type: string
+      description: 상세주소
+    Ani:
+      type: string
+      description: ANI
+    AssignStatus:
+      type: string
+      description: DNIS상태
+    AttendBillField:
+      type: string
+      description: 빌링필드
+    AttendBillType:
+      type: string
+      description: 빌링유형
+    AttendCallType:
+      type: string
+      description: 콜유형
+    AttendConfType:
+      type: string
+      description: 회의유형
+    AttendEmail:
+      type: string
+      description: 사용자 이메일
+    AttendMultDialOrder:
+      type: string
+      description: 블래스트 다어얼번호 순선
+    AttendName:
+      type: string
+      description: 참석자명
+    AttendPartitionId:
+      type: string
+      description: 파티션ID
+    AttendPhone:
+      type: string
+      description: 참석자 전화번호
+    AttendPin:
+      type: string
+      description: PIN 번호
+    AttendTalkMode:
+      type: string
+      description: 대화모드
+    AttendUserDef:
+      type: string
+      description: 참석자 사용자설명
+    AttendUsrDef2:
+      type: string
+      description: 사용자정의2
+    AttendUsrDef3:
+      type: string
+      description: 사용자정의3
+    AttendUsrDef4:
+      type: string
+      description: 사용자정의4
+    AudioClientParty:
+      type: string
+      description: 오디오클라이언트파티
+    AudioCodec:
+      type: string
+      description: 오디오코덱
+    AuthEYn:
+      type: string
+      description: 실행권한
+    AuthRYn:
+      type: string
+      description: 읽기권한
+    AuthWYn:
+      type: string
+      description: 쓰기권한
+    AutoActivateState:
+      type: string
+      description: 자동 회의 시작여부
+    BaseAddr:
+      type: string
+      description: 기본주소
+    BdrSttsCd:
+      type: string
+      description: 빌링데이터 상태코드
+    BillAble:
+      type: string
+      description: '회의명   '
+    BillAcntNo:
+      type: integer
+      description: 청구계정번호
+    BillAcntSttsCd:
+      type: string
+      description: 청구상태코드
+    BillCode:
+      type: string
+      description: 빌링코드
+    BillCurCd:
+      type: string
+      description: 청구액 통화코드
+    BillCyclCd:
+      type: string
+      description: 청구주기코드
+    BillDate:
+      type: string
+      description: 빌링일자
+    BillingField:
+      type: string
+      description: 빌링필드
+    BillingFlag:
+      type: string
+      description: 청구 여부
+    BillingType:
+      type: string
+      description: 빌링유형
+    BillRecCode:
+      type: string
+      description: 녹음코드
+    BillRecType:
+      type: string
+      description: 녹음유형
+    BillStrtDttm:
+      type: string
+      description: 빌링시작일
+    BizCond:
+      type: string
+      description: 업태
+    BizRegNo:
+      type: string
+      description: 사업자등록번호
+    BizType:
+      type: string
+      description: 업종
+    BltxtBaseAddr:
+      type: string
+      description: 청구서수령 기본주소
+    BltxtDtlAddr:
+      type: string
+      description: 청구서수령 상세주소
+    BltxtEmail:
+      type: string
+      description: 청구서수령 이메일
+    BltxtFaxNo:
+      type: string
+      description: 청구서수령 팩스번호
+    BltxtKdCd:
+      type: string
+      description: 청구서유형코드
+    BltxtMtelNo:
+      type: string
+      description: 청구서수령 휴대폰번호
+    BltxtRcptName:
+      type: string
+      description: 청구서수령인명
+    BltxtZipCd:
+      type: string
+      description: 청구서수령 우편번호
+    BridgeConnectTime:
+      type: string
+      description: 브릿지연결시간
+    BridgeDisconnectTime:
+      type: string
+      description: 브릿지해제시간
+    BridgeHoldTime:
+      type: string
+      description: 브릿지홀드시간
+    BridgeId:
+      type: string
+      description: 브릿지 ID
+    CallFlow:
+      type: string
+      description: 콜플로우
+    ChargingDvCd:
+      type: string
+      description: 요금구분
+    CodeDesc1:
+      type: string
+      description: 설명1
+    CodeDesc2:
+      type: string
+      description: 설명2
+    CodeDesc3:
+      type: string
+      description: 설명3
+    Comments:
+      type: string
+      description: 코멘트
+    CommonCd:
+      type: string
+      description: 공통코드
+    CommonCdNm:
+      type: string
+      description: 코드명
+    CommonGroupCd:
+      type: string
+      description: 그룹코드
+    CommonGroupName:
+      type: string
+      description: 그룹코드명
+    CompanyName:
+      type: string
+      description: 회사명
+    ConfActivationTime:
+      type: integer
+      description: 회의 시작 시간
+    ConfDuration:
+      type: integer
+      description: 회의 예약 시간
+    ConfereeType:
+      type: string
+      description: 참가자유형
+    ConfLinked:
+      type: string
+      description: 회의연결 여부
+    ConfName:
+      type: string
+      description: 청구가능여부
+    ContactDate:
+      type: string
+      description: 문의일자
+    ContactDesc:
+      type: string
+      description: 문의사항
+    ContactId:
+      type: integer
+      description: 문의ID
+    ContactMidCl:
+      type: string
+      description: 문의중분류
+    ContactMstCl:
+      type: string
+      description: 문의대분류
+    ContactSlvCl:
+      type: string
+      description: 문의소분류
+    ContactStat:
+      type: string
+      description: 문의상태
+    CorpRegNo:
+      type: string
+      description: 주민/법인번호
+    CreationDate:
+      type: string
+      description: 등록일
+      format: date-time
+    CrrTp:
+      type: string
+      description: 조직구분
+    CtrtAppnt:
+      type: string
+      description: 계약 신청자
+    CtrtChgResnCd:
+      type: string
+      description: 계약변경 사유코드
+    CtrtId:
+      type: integer
+      description: 계약ID
+    CtrtName:
+      type: string
+      description: 계약명
+    CtrtSttsCd:
+      type: string
+      description: 계약상태코드
+    CtrtSvcId:
+      type: integer
+      description: 계약서비스ID
+    CustClass:
+      type: string
+      description: 고객구분
+    CustId:
+      type: string
+      description: 고객ID
+    CustName:
+      type: string
+      description: 고객명
+    CustType:
+      type: string
+      description: 고객유형
+    DeptCd:
+      type: string
+      description: 부서코드
+    Description:
+      type: string
+      description: 설명
+    DialoutOperatorNo:
+      type: string
+      description: 운영자발신번호
+    DisconnectMethod:
+      type: string
+      description: 해지방법
+    DisplayOrder:
+      type: integer
+      description: 출력순서
+    Dnis:
+      type: string
+      description: 회의연결번호
+    DnisCompLogoMsg:
+      type: string
+      description: DNIS 회사로고메시지
+    DnisDesc:
+      type: string
+      description: 설명
+    DnisExpDate:
+      type: string
+      description: DNIS 종료일자
+    DnisInfo2:
+      type: string
+      description: 메시지정보2
+    DnisInfo3:
+      type: string
+      description: 메시지정보3
+    DnisInfo4:
+      type: string
+      description: 메시지정보4
+    DnisLang:
+      type: string
+      description: 설정언어번호
+    DnisLangSelOrder:
+      type: string
+      description: DNIS 언어선택순서
+    DnisMsg:
+      type: string
+      description: 사용자정의메시지
+    DnisPartitionId:
+      type: string
+      description: DNIS 파티션ID
+    DnisStatus:
+      type: string
+      description: 상태
+    DnisTreatment:
+      type: string
+      description: 트리트먼드
+    DscntDscr:
+      type: string
+      description: 할인설명
+    DtlAddr:
+      type: string
+      description: 상세주소
+    DutyCd:
+      type: string
+      description: 직무구분코드
+    EffDt:
+      type: string
+      description: 입사일자
+    Email:
+      type: string
+      description: 이메일
+    EmpEnm:
+      type: string
+      description: 영문사원명
+    EmpNm:
+      type: string
+      description: 사원명
+    EmpNo:
+      type: string
+      description: 사번
+    EnteredTotalCount:
+      type: integer
+      description: 전체참가자수
+    ExpDt:
+      type: string
+      description: 퇴사일자
+    ExrateRfctDd:
+      type: string
+      description: 환율반영일
+    ExtId:
+      type: integer
+      description: 학장ID
+    FaxNo:
+      type: string
+      description: 팩스번호
+    FtrCd:
+      type: string
+      description: 서비스요소ID
+    FullTelNo:
+      type: string
+      description: 전화번호
+    GroupId:
+      type: string
+      description: 그룹ID
+    GroupName:
+      type: string
+      description: 그룹명
+    GuestEntrance:
+      type: string
+      description: 참석자 회의 참석 여부
+    GuestExit:
+      type: string
+      description: 참석자 회의 종료 여부
+    HelpFilename:
+      type: string
+      description: 도움말파일명
+    HostEntrance:
+      type: string
+      description: 호스트 참석 여부
+    HostExit:
+      type: string
+      description: 호스트 종료 알림 여부
+    HostPasscode:
+      type: string
+      description: 호스트 암호
+    Id:
+      type: integer
+      description: 회의ID
+    ImgPath:
+      type: string
+      description: 이미지경로
+    Incoming:
+      type: string
+      description: 인입
+    InConf:
+      type: string
+      description: 인컨프
+    InitRate:
+      type: integer
+      description: 초기요율
+    InitRateAplyUnit:
+      type: integer
+      description: 초기요율적용단위
+    InitRateAplyUnitCd:
+      type: string
+      description: 초기요율적용단위구분코드
+    InOperConfFlag:
+      type: string
+      description: 회의플래그
+    IpBandwidth:
+      type: string
+      description: 허용 IP대역
+    Isfolder:
+      type: string
+      description: 폴더여부
+    ItemId:
+      type: string
+      description: 아이템ID
+    ItemSeqNo:
+      type: integer
+      description: ITEM 순번
+    ItemValue:
+      type: string
+      description: 아이템값
+    JoinId:
+      type: string
+      description: 회원결합 ID
+    LangType:
+      type: string
+      description: 언어
+    LastLoginDate:
+      type: string
+      description: 최종로그인일자
+    LastLoginTime:
+      type: string
+      description: 최종로그인일시
+    LineNo:
+      type: string
+      description: 라인번호
+    Linkable:
+      type: string
+      description: 회의 구성 여부
+    LocalDisconnect:
+      type: string
+      description: 내부연결해제여부
+    LoginDttm:
+      type: string
+      description: 로그인시간
+      format: date-time
+    LoginFailCount:
+      type: integer
+      description: 로그인실패횟수
+    LogoutDttm:
+      type: string
+      description: 로그아웃 시간
+      format: date-time
+    LogoutStatus:
+      type: string
+      description: 로그아웃상태
+    MainConfId:
+      type: string
+      description: 주 회의 ID
+    MainView:
+      type: string
+      description: MAIN 화면
+    MarketCd:
+      type: string
+      description: 마케코드
+    MaxParties:
+      type: integer
+      description: 최대 참석자
+    MemberId:
+      type: string
+      description: 구성원ID
+    MemberName:
+      type: string
+      description: 구성원이름
+    MemberRole:
+      type: string
+      description: 구성원권한
+    MemberYn:
+      type: string
+      description: 멤버여부
+    MenuName:
+      type: string
+      description: 메뉴명
+    MenuNo:
+      type: integer
+      description: 메뉴번호
+    Milliseconds:
+      type: string
+      description: 밀리초
+    MtelNo:
+      type: string
+      description: 휴대폰번호
+    Name:
+      type: string
+      description: 이름
+    NorEmpYn:
+      type: string
+      description: 정직원여부
+    OperatorId:
+      type: string
+      description: 운영자ID
+    OperNo:
+      type: integer
+      description: 운영번호
+    OperNumber:
+      type: string
+      description: 주문번호
+    OpNo:
+      type: string
+      description: OP 번호
+    OrderNo:
+      type: string
+      description: 코드순서
+    OrgId:
+      type: string
+      description: 조직ID
+    PartitionId:
+      type: string
+      description: 파티션 ID
+    PartyOid:
+      type: string
+      description: 패리티 ID
+    Password:
+      type: string
+      description: 비밀번호
+    Password1:
+      type: string
+      description: 이전비밀번호1
+    Password2:
+      type: string
+      description: 이전비밀번호2
+    PasswordChangePeriod:
+      type: integer
+      description: 비밀번호교환주기
+    PasswordDueDate:
+      type: string
+      description: 비밀번호만료일
+    Phone:
+      type: string
+      description: 폰번호
+    PhoneFieldUsed:
+      type: string
+      description: 폰필드사용
+    Pin:
+      type: string
+      description: PIN번호
+    PlaybackSec:
+      type: integer
+      description: 플레이백 시간
+    Pofn:
+      type: string
+      description: 국번
+    Port:
+      type: string
+      description: 포트번호
+    Position:
+      type: string
+      description: 직위
+    PositionCd:
+      type: string
+      description: 직급구분코드
+    PrecedenceLevel:
+      type: string
+      description: 상위레벨
+    PrefixNo:
+      type: string
+      description: 전화국번호
+    PrepaidTimeRemaining:
+      type: integer
+      description: 선불남은시간
+    ProcDate:
+      type: string
+      description: 처리일자
+    ProcDesc:
+      type: string
+      description: 처리설명
+    ProdCd:
+      type: string
+      description: 상품코드
+    ProdConfCd:
+      type: string
+      description: 상품구성식별코드
+    ProdDscr:
+      type: string
+      description: 상품설명
+    ProdDvCd:
+      type: string
+      description: 상품구분코드
+    ProdKdCd:
+      type: string
+      description: 상품유형코드
+    ProdKdDtlCd:
+      type: string
+      description: 상품유형상세코드
+    ProdName:
+      type: string
+      description: 상품명
+    ProdRateId:
+      type: integer
+      description: 상품요율ID
+    ProjCode:
+      type: string
+      description: 프로젝트코드
+    ProvSeqNo:
+      type: integer
+      description: 서비스번호
+    PymAccuntNo:
+      type: string
+      description: 납부은행/카드번호
+    PymAcntNo:
+      type: integer
+      description: 납부계정번호
+    PymBankCd:
+      type: string
+      description: 납부은행코드
+    PymCardCd:
+      type: string
+      description: 납부카드사코드
+    PymDd:
+      type: string
+      description: 결제일자
+    PymExpDt:
+      type: string
+      description: 신용카드유효일자
+    PymKdCd:
+      type: string
+      description: 납부유형코드
+    PymName:
+      type: string
+      description: 납부자명
+    PymOwnerName:
+      type: string
+      description: 납부자명
+    PymVrAcnt:
+      type: string
+      description: 가상계좌번호
+    QuickStart:
+      type: string
+      description: 신속 회의 시작 여부
+    Rate:
+      type: integer
+      description: 요율
+    RateAplyDvCd:
+      type: string
+      description: 요율적용구분코드
+    RateAplyKdCd:
+      type: string
+      description: 요율적용유형코드
+    RateAplyLvlCd:
+      type: string
+      description: 요율적용레벨코드
+    RateAplyUnit:
+      type: string
+      description: 요율적용단위
+    RateAplyUnitCd:
+      type: string
+      description: 요율적용단위구분코드
+    RateDvCd:
+      type: string
+      description: 요율구분코드
+    RateId:
+      type: string
+      description: 요율ID
+    RcptUsrId:
+      type: string
+      description: 처리사용자ID
+    RecFileForamt:
+      type: string
+      description: 녹음 파일 포맷
+    RecordSec:
+      type: integer
+      description: 녹음 시간
+    RecvDate:
+      type: string
+      description: 접수일자
+    RemoteAddr:
+      type: string
+      description: 원격 IP 주소
+    RepName:
+      type: string
+      description: 대표자명
+    Respons:
+      type: string
+      description: 직책
+    Rno:
+      type: string
+      description: 주민등록번호
+    SaleEndDttm:
+      type: string
+      description: 판매 유효종료일
+    SalesOrgId:
+      type: string
+      description: 계약 매출부서
+    SaleStrtDttm:
+      type: string
+      description: 판매 유효시작일
+    SalesUsrId:
+      type: string
+      description: 계약 영업담당자
+    ScrbDttm:
+      type: string
+      description: 최소 가입 일시
+    SessionId:
+      type: string
+      description: 네트워크 세션 ID
+    Stat:
+      type: string
+      description: 상태
+    StepNo:
+      type: integer
+      description: 순서번호
+    SubConfActivated:
+      type: string
+      description: 서브 회의 활성 여부
+    SubProdCd:
+      type: string
+      description: SUB 상품ID
+    SvcAcntNo:
+      type: string
+      description: 서비스계정번호
+    SvcAlertOptions:
+      type: string
+      description: 회의경보여부
+    SvcAutoBreakDown:
+      type: string
+      description: 회의중단여부
+    SvcBillCd:
+      type: string
+      description: 회의요금코드
+    SvcCallFlow:
+      type: string
+      description: 회의 콜플로우
+    SvcConfCd:
+      type: string
+      description: 회의확정코드
+    SvcConfDate:
+      type: string
+      description: 회의예약일
+    SvcConfDuration:
+      type: string
+      description: 회의기간
+    SvcConfParties:
+      type: string
+      description: 회의참석자수
+    SvcConfTime:
+      type: string
+      description: 회의시작시간
+    SvcConfTpLvl:
+      type: string
+      description: 회의유형레벨
+    SvcConfUpdate:
+      type: string
+      description: 회의갱신여부
+    SvcDetailFlag:
+      type: string
+      description: 회의상세정보 설정여부
+    SvcDomain:
+      type: string
+      description: 서비스도메인
+    SvcHostStrtConf:
+      type: string
+      description: HOST 회의주체 여부
+    SvcLinkFlag:
+      type: string
+      description: 링크플래그
+    SvcLocalPinValid:
+      type: string
+      description: PIN 유효성 검사부여
+    SvcMlpp:
+      type: string
+      description: MLPP 유형
+    SvcName:
+      type: string
+      description: 회의명
+    SvcNo:
+      type: string
+      description: 서비스번호
+    SvcPartitionId:
+      type: string
+      description: 파티션ID
+    SvcPcodeOne:
+      type: string
+      description: Pcode 번호
+    SvcPcodeOneItone:
+      type: string
+      description: Pcode Inbound 톤
+    SvcPcodeOneMode:
+      type: string
+      description: Pcode1 모드
+    SvcPcodeOneMsg:
+      type: string
+      description: Pcode 확인메시지
+    SvcPcodeOneOtone:
+      type: string
+      description: Pcode Outbound 톤
+    SvcPcodeTwo:
+      type: string
+      description: Pcode2
+    SvcPcodeTwoItone:
+      type: string
+      description: Pcode2 입력톤
+    SvcPcodeTwoMode:
+      type: string
+      description: Pcode2 모드
+    SvcPcodeTwoMsg:
+      type: string
+      description: Pcode2 메시지
+    SvcPcodeTwoOtow:
+      type: string
+      description: Pcode2 출력톤
+    SvcPcodeType:
+      type: string
+      description: Pcode 유형
+    SvcPresetFlag:
+      type: string
+      description: 회의 설정 여부
+    SvcProdCd:
+      type: string
+      description: 서비스상품ID
+    SvcProdDvCd:
+      type: string
+      description: 상품구분코드
+    SvcRecNo:
+      type: string
+      description: 회의예약요청번호
+    SvcReqType:
+      type: string
+      description: 회의요청유형
+    SvcResvId:
+      type: string
+      description: 회의예약ID
+    SvcSeqNo:
+      type: integer
+      description: 회의예약순번
+    SvcSpecFlag:
+      type: string
+      description: 특별지침플래그
+    SvcSttsCd:
+      type: string
+      description: 서비스 상태
+    SvcSttsChngRsnCd:
+      type: string
+      description: 상태변경사유코드
+    SvcSttsChngRsnDesc:
+      type: string
+      description: 상태변경사유
+    SwitchFlag:
+      type: string
+      description: 정회원 전환 여부
+    SwitchManager:
+      type: string
+      description: 전환 담당
+    TariffDscr:
+      type: string
+      description: 요율설명
+    TaxFlag:
+      type: string
+      description: 과세여부
+    TaxInvoiceFlag:
+      type: string
+      description: 세금계산서 발행여부
+    TelNo:
+      type: string
+      description: 전화번호
+    TermRsn:
+      type: string
+      description: 회의 종료 사유
+    TmntDttm:
+      type: string
+      description: 최종 해지 일시
+    TmntResn:
+      type: string
+      description: 해지 사유
+    TokenId:
+      type: string
+      description: 토큰 ID
+    TransDate:
+      type: string
+      description: 트랜잭션 일자
+    TransMemo:
+      type: string
+      description: 전환메모
+    TransNo:
+      type: integer
+      description: 빌링 트랜잭션ID
+    TransSeq:
+      type: integer
+      description: 문의전환순서
+    TransStat:
+      type: string
+      description: 전환상태
+    TransTime:
+      type: string
+      description: 트랜잭션 시간
+    TransUsrId:
+      type: string
+      description: 전환대상사용자ID
+    TrnasOrgId:
+      type: string
+      description: 전환조직ID
+    TrunkType:
+      type: string
+      description: 트렁크유형
+    UpdateDate:
+      type: string
+      description: 수정일
+      format: date-time
+    UpMenuNo:
+      type: integer
+      description: 상위메뉴번호
+    UsedExtDualRecording:
+      type: string
+      description: 외부녹음여부
+    UseEndDate:
+      type: string
+      description: 사용종료일
+    UserDefLabel1:
+      type: string
+      description: 사용자 정의레벨 1
+    UserDefLabel2:
+      type: string
+      description: 사용자 정의레벨 2
+    UserDefLabel3:
+      type: string
+      description: 사용자 정의레벨 3
+    UserDefLabel4:
+      type: string
+      description: 사용자 정의레벨 4
+    UserField1:
+      type: string
+      description: 사용자 필드 1
+    UserField2:
+      type: string
+      description: 사용자 필드 2
+    UserGroupId:
+      type: string
+      description: 기본사용자그룹
+    UserGroupLevel:
+      type: string
+      description: 사용자그룹레벨
+    UserGroupName:
+      type: string
+      description: 사용자그룹명
+    UserId:
+      type: string
+      description: 직원ID
+    UserName:
+      type: string
+      description: 사용자명
+    UseStartDate:
+      type: string
+      description: 사용시작일
+    UseYn:
+      type: string
+      description: 사용여부
+    UsrId:
+      type: string
+      description: 사용자ID
+    UsrPassword:
+      type: string
+      description: 회원비밀번호
+    UsrStat:
+      type: string
+      description: 회원상태
+    UsrType:
+      type: string
+      description: 회원유형코드
+    ValdEndDttm:
+      type: string
+      description: 유효종료일시
+    ValdStrtDttm:
+      type: string
+      description: 유효시작일시
+    Version:
+      type: string
+      description: 버전
+    ViewPath:
+      type: string
+      description: URL
+    VoiceCaptureEnabled:
+      type: string
+      description: 음성 캡처 여부
+    VpnId:
+      type: string
+      description: VPN ID
+    ZipCd:
+      type: string
+      description: 우편번호
+    TbsBdr:
+      type: object
+      properties:
+        transNo:
+          type: integer
+          description: 빌링 트랜잭션ID
+        billDate:
+          type: string
+          description: 빌링일자
+          format: date
+        transDate:
+          type: string
+          description: 트랜잭션 일자
+          format: date
+        transTime:
+          type: string
+          description: 트랜잭션 시간
+        id:
+          type: integer
+          description: 회의ID
+          format: int32
+        billCode:
+          type: string
+          description: 빌링코드
+        bdrSttsCd:
+          type: string
+          description: 빌링데이터 상태코드
+        billAble:
+          type: string
+          description: 회의명
+        confName:
+          type: string
+          description: 청구가능여부
+        billRecType:
+          type: string
+          description: 녹음유형
+        billRecCode:
+          type: string
+          description: 녹음코드
+        callFlow:
+          type: string
+          description: 콜플로우
+        hostPasscode:
+          type: string
+          description: 호스트 암호
+        accountNo:
+          type: string
+          description: 회의계정번호
+        autoActivateState:
+          type: string
+          description: 자동 회의 시작여부
+        mainConfId:
+          type: string
+          description: 주 회의 ID
+        usedExtDualRecording:
+          type: string
+          description: 이중 외부 녹음여부
+        accountGroupId:
+          type: string
+          description: 계정 그롭ID
+        recFileForamt:
+          type: string
+          description: 녹음 파일 포맷
+        linkable:
+          type: string
+          description: 회의 구성 여부
+        vpnId:
+          type: string
+          description: VPN ID
+        confDuration:
+          type: integer
+          description: 회의 예약 시간
+          format: int32
+        maxParties:
+          type: integer
+          description: 최대 참석자
+          format: int32
+        hostEntrance:
+          type: string
+          description: 호스트 참석 여부
+        hostExit:
+          type: string
+          description: 호스트 종료 알림 여부
+        guestEntrance:
+          type: string
+          description: 참석자 회의 참석 여부
+        guestExit:
+          type: string
+          description: 참석자 회의 종료 여부
+        quickStart:
+          type: string
+          description: 신속 회의 시작 여부
+        userDefLabel1:
+          type: string
+          description: 사용자 정의레벨 1
+        userDefLabel2:
+          type: string
+          description: 사용자 정의레벨 2
+        userDefLabel3:
+          type: string
+          description: 사용자 정의레벨 3
+        userDefLabel4:
+          type: string
+          description: 사용자 정의레벨 4
+        confActivationTime:
+          type: string
+          description: 회의 시작 시간
+        partitionId:
+          type: string
+          description: 파티션 ID
+        voiceCaptureEnabled:
+          type: string
+          description: 음성 캡처 여부
+        userField1:
+          type: string
+          description: 사용자 필드 1
+        userField2:
+          type: string
+          description: 사용자 필드 2
+        recordSec:
+          type: integer
+          description: 녹음 시간
+          format: int32
+        playbackSec:
+          type: integer
+          description: 플레이백 시간
+          format: int32
+        projCode:
+          type: string
+          description: 프로젝트 코드
+        subConfActivated:
+          type: string
+          description: 서브 회의 활성 여부
+        confLinked:
+          type: string
+          description: 회의연결 여부
+        billingFlag:
+          type: string
+          description: 청구 여부
+        termRsn:
+          type: string
+          description: 회의 종료 사유
+        bridgeId:
+          type: string
+          description: 브릿지 ID
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TbsOperatorLoggedComments:
+      type: object
+      properties:
+        itemSeqNo:
+          type: integer
+          description: ITEM 순번 (Auto Increment)
+          format: int32
+        opNo:
+          type: string
+          description: OP 번호
+        transNo:
+          type: integer
+          description: 빌링 트랜잭션ID
+          format: int32
+        billCode:
+          type: string
+          description: 빌링코드
+        id:
+          type: integer
+          description: 회의ID
+          format: int32
+        transDate:
+          type: string
+          description: 트랜잭션일자
+        transTime:
+          type: string
+          description: 트랜잭션 시간
+        billDate:
+          type: string
+          description: 빌링일자
+        comments:
+          type: string
+          description: 코멘트
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TbsOperatorParticipantComments:
+      type: object
+      properties:
+        itemSeqNo:
+          type: integer
+          description: ITEM 순번 (Auto Increment)
+          format: int32
+        opNo:
+          type: string
+          description: OP 번호
+        partyOid:
+          type: string
+          description: 패리티 ID
+        transNo:
+          type: integer
+          description: 트랜잭션ID
+          format: int32
+        billCode:
+          type: string
+          description: 빌링코드
+        id:
+          type: integer
+          description: 회의ID
+          format: int32
+        transDate:
+          type: string
+          description: 트랜잭선 일자
+        transTime:
+          type: string
+          description: 트랜잭션 시간
+        billDate:
+          type: string
+          description: 빌링일자
+        port:
+          type: string
+          description: 포트번호
+        phone:
+          type: string
+          description: 폰번호
+        comments:
+          type: string
+          description: 코멘트
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TbsParticipantAuxiliaryInfo:
+      type: object
+      properties:
+        itemSeqNo:
+          type: integer
+          description: ITEM 순번
+          format: int32
+        transNo:
+          type: integer
+          description: 트랜잭션ID
+          format: int32
+        billCode:
+          type: string
+          description: 빌링코드
+        id:
+          type: integer
+          description: 회의ID
+          format: int32
+        transDate:
+          type: string
+          description: 트랜잭선 일자
+        transTime:
+          type: string
+          description: 트랜잭션 시간
+        billDate:
+          type: string
+          description: 빌링일자
+        port:
+          type: string
+          description: 포트번호
+        pin:
+          type: string
+          description: PIN번호
+        billingField:
+          type: string
+          description: 빌링필드
+        billingType:
+          type: string
+          description: 빌링유형
+        confereeType:
+          type: string
+          description: 참가자유형
+        inOperConfFlag:
+          type: string
+          description: 회의플래그
+        operNo:
+          type: integer
+          description: 운영번호
+          format: int32
+        prepaidTimeRemaining:
+          type: integer
+          description: 선불남은시간
+          format: int32
+        precedenceLevel:
+          type: string
+          description: 상위레벨
+        enteredTotalCount:
+          type: integer
+          description: 전체참가자수
+          format: int32
+        audioCodec:
+          type: string
+          description: 오디오코덱
+        audioClientParty:
+          type: string
+          description: 오디오클라이언트파티
+    TbsParticipantIncoming:
+      type: object
+      properties:
+        itemSeqNo:
+          type: integer
+          description: ITEM 순번
+          format: int32
+        partyOid:
+          type: string
+          description: 파티 OID
+        transNo:
+          type: integer
+          description: 트랜잭션ID
+          format: int32
+        billCode:
+          type: string
+          description: 빌링코드
+        id:
+          type: integer
+          description: 회의ID
+          format: int32
+        transDate:
+          type: string
+          description: 트랜잭션 일자
+        transTime:
+          type: string
+          description: 트랜잭선 시간
+        billDate:
+          type: string
+          description: 빌링일자
+        dnis:
+          type: string
+          description: 회의연결번호
+        ani:
+          type: string
+          description: ANI
+        precedenceLevel:
+          type: string
+          description: 상위레벨
+        milliseconds:
+          type: integer
+          description: 밀리초
+          format: int32
+        localDisconnect:
+          type: string
+          description: 내부연결해제여부
+        bridgeConnectTime:
+          type: string
+          description: 브릿지연결시간
+        bridgeDisconnectTime:
+          type: string
+          description: 브릿지해제시간
+    TbsParticipantState:
+      type: object
+      properties:
+        itemSeqNo:
+          type: integer
+          description: ITEM 순번
+          format: int32
+        partyOid:
+          type: string
+          description: 파티 OID
+        transNo:
+          type: integer
+          description: 트랜잭션ID
+          format: int32
+        billDate:
+          type: string
+          description: 빌링일자
+        transDate:
+          type: string
+          description: 트랜잭션 일자
+        transTime:
+          type: string
+          description: 트랜잭선 시간
+        id:
+          type: integer
+          description: 회의ID
+          format: int32
+        billCode:
+          type: string
+          description: 빌링코드
+        inConf:
+          type: string
+          description: 인컨프
+        incoming:
+          type: string
+          description: 인입
+        port:
+          type: string
+          description: 포트번호
+        name:
+          type: string
+          description: 이름
+        phone:
+          type: string
+          description: 폰번호
+        stat:
+          type: string
+          description: 상태
+        inOperConfFlag:
+          type: string
+          description: 회의플래그
+        operNumber:
+          type: string
+          description: 주문번호
+        dialoutOperatorNo:
+          type: string
+          description: 운영자발신번호
+        phoneFieldUsed:
+          type: string
+          description: 폰필드사용
+        disconnectMethod:
+          type: string
+          description: 해지방법
+        milliseconds:
+          type: string
+          description: 밀리초
+        localDisconnect:
+          type: string
+          description: 내부연결해제여부
+        trunkType:
+          type: string
+          description: 트렁크유형
+        bridgeConnectTime:
+          type: string
+          description: 브릿지연결시간
+        bridgeDisconnectTime:
+          type: string
+          description: 브릿지해제시간
+        bridgeHoldTime:
+          type: string
+          description: 브릿지홀드시간
+    TcmCustGroup:
+      required:
+      - groupId
+      type: object
+      properties:
+        groupId:
+          type: string
+          description: 그룹ID
+        groupName:
+          type: string
+          description: 그룹명
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcmCustInfo:
+      required:
+      - custId
+      type: object
+      properties:
+        custId:
+          type: string
+          description: 고객ID
+        accountId:
+          type: string
+          description: 회원ID
+        custName:
+          type: string
+          description: 고객명
+        custType:
+          type: string
+          description: 고객유형
+        custClass:
+          type: string
+          description: 고객구분
+        corpRegNo:
+          type: string
+          description: 주민/법인번호
+        bizRegNo:
+          type: string
+          description: 사업자등록번호
+        taxFlag:
+          type: string
+          description: 과세여부
+          default: "1"
+        zipCd:
+          type: string
+          description: 우편번호
+        baseAddr:
+          type: string
+          description: 기본주소
+        dtlAddr:
+          type: string
+          description: 상세주소
+        telNo:
+          type: string
+          description: 전화번호
+        faxNo:
+          type: string
+          description: 팩스번호
+        mtelNo:
+          type: string
+          description: 휴대폰번호
+        email:
+          type: string
+          description: 이메일
+        repName:
+          type: string
+          description: 대표자명
+        bizCond:
+          type: string
+          description: 업태
+        bizType:
+          type: string
+          description: 업종
+        extId:
+          type: integer
+          description: 학장ID
+        valdStrtDttm:
+          type: string
+          description: 유효시작일시
+        valdEndDttm:
+          type: string
+          description: 유효종료일시
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcmCustInfoExt:
+      required:
+      - custId
+      - extId
+      - itemId
+      type: object
+      properties:
+        extId:
+          type: integer
+          description: 확장ID
+        custId:
+          type: string
+          description: 고객ID
+        itemId:
+          type: string
+          description: 아이템ID
+        itemValue:
+          type: string
+          description: 아이템값
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcmCustMemberInfo:
+      required:
+      - custId
+      - groupId
+      - memberId
+      type: object
+      properties:
+        memberId:
+          type: string
+          description: 구성원ID
+        custId:
+          type: string
+          description: 고객ID
+        groupId:
+          type: string
+          description: 그룹ID
+        memberName:
+          type: string
+          description: 구성원이름
+        mtelNo:
+          type: string
+          description: 휴대폰번호
+        email:
+          type: string
+          description: 이메일
+        memberRole:
+          type: string
+          description: 구성원권한
+        memberYn:
+          type: string
+          description: 멤버여부
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcmDnisAssignInfo:
+      type: object
+      properties:
+        dnis:
+          type: string
+          description: DNIS
+        custId:
+          type: string
+          description: 고객ID
+        assignStatus:
+          type: string
+          description: DNIS상태
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcmAccount:
+      type: object
+      properties:
+        accountId:
+          type: string
+          description: 회원고유ID
+        accountPassword:
+          type: string
+          description: 회원비밀번호
+        accountType:
+          type: string
+          description: 회원유형코드
+        accountStat:
+          type: string
+          description: 회원상태
+        custId:
+          type: string
+          description: 고객ID
+        scrbDttm:
+          type: string
+          description: 최소 가입 일시
+        tmntDttm:
+          type: string
+          description: 최종 해지 일시
+        tmntResn:
+          type: string
+          description: 해지 사유
+        joinId:
+          type: string
+          description: 회원결합 ID
+        switchFlag:
+          type: string
+          description: 정회원 전환 여부
+        switchManager:
+          type: string
+          description: 전환 담당
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcmAccountLoginHist:
+      type: object
+      properties:
+        loginDttm:
+          type: string
+          description: '로그인시간 (기본값: 현재시간)'
+          format: date-time
+        accountId:
+          type: string
+          description: User account id
+        sessionId:
+          type: string
+          description: 네트워크 세션 ID
+        remoteAddr:
+          type: string
+          description: 원격 IP 주소
+        logoutDttm:
+          type: string
+          description: 로그아웃 시간
+          format: date-time
+        logoutStatus:
+          type: string
+          description: 로그아웃상태
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcsBillAcntInfo:
+      required:
+      - billAcntNo
+      - custId
+      type: object
+      properties:
+        billAcntNo:
+          type: integer
+          description: 청구계정번호 (Auto Increment)
+        custId:
+          type: string
+          description: 고객ID
+        billCyclCd:
+          type: string
+          description: 청구주기코드
+        billAcntSttsCd:
+          type: string
+          description: 청구상태코드
+        billCurCd:
+          type: string
+          description: 청구액 통화코드
+        exrateRfctDd:
+          type: string
+          description: 환율반영일
+        bltxtKdCd:
+          type: string
+          description: 청구서유형코드
+        bltxtRcptName:
+          type: string
+          description: 청구서수령인명
+        bltxtEmail:
+          type: string
+          description: 청구서수령 이메일
+        bltxtMtelNo:
+          type: string
+          description: 청구서수령 휴대폰번호
+        bltxtZipCd:
+          type: string
+          description: 청구서수령 우편번호
+        bltxtBaseAddr:
+          type: string
+          description: 청구서수령 기본주소
+        bltxtDtlAddr:
+          type: string
+          description: 청구서수령 상세주소
+        bltxtFaxNo:
+          type: string
+          description: 청구서수령 팩스번호
+        taxInvoiceFlag:
+          type: string
+          description: 세금계산서 발행여부
+        taxFlag:
+          type: string
+          description: 과세여부
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcsContactSalesInfo:
+      type: object
+      properties:
+        contactId:
+          type: integer
+          description: 문의ID (Auto Increment)
+        contactDate:
+          type: string
+          description: 문의일자
+        email:
+          type: string
+          description: 이메일
+        companyName:
+          type: string
+          description: 회사명
+        name:
+          type: string
+          description: 이름
+        telNo:
+          type: string
+          description: 전화번호
+        mtelNo:
+          type: string
+          description: 휴대폰번호
+        zipCd:
+          type: string
+          description: 우편번호
+        baseAddr:
+          type: string
+          description: 기본주소
+        dtlAddr:
+          type: string
+          description: 상세주소
+        contactDesc:
+          type: string
+          description: 문의사항
+        procDesc:
+          type: string
+          description: 처리설명
+        rcptUsrId:
+          type: string
+          description: 처리사용자ID
+        contactMstCl:
+          type: string
+          description: 문의대분류
+        contactMidCl:
+          type: string
+          description: 문의중분류
+        contactSlvCl:
+          type: string
+          description: 문의소분류
+        contactStat:
+          type: string
+          description: 문의상태
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcsContactTranInfo:
+      type: object
+      properties:
+        contactId:
+          type: integer
+          description: 문의ID
+        transDate:
+          type: string
+          description: 문의전환일자(YYYYMMDDHH24MISS)
+        transSeq:
+          type: integer
+          description: 문의전환순서
+        trnasOrgId:
+          type: string
+          description: 전환조직ID
+        transUsrId:
+          type: string
+          description: 전환대상사용자ID
+        transMemo:
+          type: string
+          description: 전환메모
+        transStat:
+          type: string
+          description: 전환상태
+        recvDate:
+          type: string
+          description: 접수일자
+        procDate:
+          type: string
+          description: 처리일자
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TcsPymAcntInfo:
+      type: object
+      properties:
+        pymAcntNo:
+          type: integer
+          description: 납부계정번호 (Auto Increment)
+        custId:
+          type: string
+          description: 고객 ID
+        pymName:
+          type: string
+          description: 납부자명
+        pymDd:
+          type: string
+          description: 결제일자
+        pymKdCd:
+          type: string
+          description: 납부유형코드
+        pymBankCd:
+          type: string
+          description: 납부은행코드
+        pymCardCd:
+          type: string
+          description: 납부카드사코드
+        pymOwnerName:
+          type: string
+          description: 납부자명
+        pymAccuntNo:
+          type: string
+          description: 납부 은행/카드번호
+        pymExpDt:
+          type: string
+          description: 신용카드 유효일자
+        pymVrAcnt:
+          type: string
+          description: 가상계좌번호
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TpdProduct:
+      type: object
+      properties:
+        prodCd:
+          type: string
+          description: 상품코드
+        marketCd:
+          type: string
+          description: 마케코드
+        svcDomain:
+          type: string
+          description: 서비스도메인
+        prodDvCd:
+          type: string
+          description: 상품구분코드
+        prodKdCd:
+          type: string
+          description: 상품유형코드
+        prodKdDtlCd:
+          type: string
+          description: 상품유형상세코드
+          default: DEF
+        version:
+          type: string
+          description: 버전
+          default: V1
+        saleStrtDttm:
+          type: string
+          description: 판매 유효시작일
+        saleEndDttm:
+          type: string
+          description: 판매 유효종료일
+        prodName:
+          type: string
+          description: 상품명
+        chargingDvCd:
+          type: string
+          description: 요금구분
+        prodDscr:
+          type: string
+          description: 상품설명
+        tariffDscr:
+          type: string
+          description: 요율설명
+        dscntDscr:
+          type: string
+          description: 할인설명
+        valdStrtDttm:
+          type: string
+          description: 유효시작일
+        valdEndDttm:
+          type: string
+          description: 유효종료일
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TpdProdRate:
+      type: object
+      properties:
+        prodRateId:
+          type: integer
+          description: 상품요금ID (Auto Increment)
+        prodCd:
+          type: string
+          description: 상품코드
+        subProdCd:
+          type: string
+          description: SUB 상품ID
+        rateId:
+          type: string
+          description: 요율ID
+        valdStrtDttm:
+          type: string
+          description: 유효시작일시
+        valdEndDttm:
+          type: string
+          description: 유효종료일시
+        prodConfCd:
+          type: string
+          description: 상품구성식별코드
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TpdProvisionInfo:
+      type: object
+      properties:
+        provSeqNo:
+          type: integer
+          description: 서비스 번호 (Auto Increment)
+        prodCd:
+          type: string
+          description: 상품코드
+        svcReqType:
+          type: string
+          description: 회의요청유형
+        svcName:
+          type: string
+          description: 회의명
+        svcConfCd:
+          type: string
+          description: 회의확정코드
+        svcAcntNo:
+          type: string
+          description: 서비스계정번호
+        svcConfTpLvl:
+          type: string
+          description: 회의유형레벨
+        svcConfDate:
+          type: string
+          description: 회의예약일
+        svcConfTime:
+          type: string
+          description: 회의시작시간
+        svcConfDuration:
+          type: string
+          description: 회의기간
+        svcConfParties:
+          type: string
+          description: 회의참석자수
+        svcAutoBreakDown:
+          type: string
+          description: 회의중단여부
+        svcAlertOptions:
+          type: string
+          description: 회의경보여부
+        svcPcodeType:
+          type: string
+          description: Pcode 유형
+        svcPcodeOne:
+          type: string
+          description: Pcode 번호
+        svcPcodeOneMsg:
+          type: string
+          description: Pcode 확인메시지
+        svcPcodeOneMode:
+          type: string
+          description: Pcode1 모드
+        svcPcodeOneItone:
+          type: string
+          description: Pcode Inbound 톤
+        svcPcodeOneOtone:
+          type: string
+          description: Pcode Outbound 톤
+        svcPcodeTwo:
+          type: string
+          description: Pcode2
+        svcPcodeTwoMsg:
+          type: string
+          description: Pcode2 메시지
+        svcPcodeTwoMode:
+          type: string
+          description: Pcode2 모드
+        svcPcodeTwoItone:
+          type: string
+          description: Pcode2 입력톤
+        svcPcodeTwoOtow:
+          type: string
+          description: Pcode2 출력톤
+        svcDetailFlag:
+          type: string
+          description: 회의 상세정보 설정 여부
+        svcPresetFlag:
+          type: string
+          description: 회의 설정 여부
+        svcCallFlow:
+          type: string
+          description: 회의 콜플로우
+        svcHostStrtConf:
+          type: string
+          description: HOST 회의주체 여부
+        svcConfUpdate:
+          type: string
+          description: 회의 갱신여부
+        svcLocalPinValid:
+          type: string
+          description: PIN 유효성 검사부여
+        svcPartitionId:
+          type: string
+          description: 파티션ID
+        svcMlpptype:
+          type: string
+          description: MLPP 유형
+        svcLinkFlag:
+          type: string
+          description: 링크플래그
+        svcSpecFlag:
+          type: string
+          description: 특별지침플래그
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TpdRate:
+      type: object
+      properties:
+        rateId:
+          type: integer
+          description: 요율식별 ID (Auto Increment)
+          format: int32
+        ftrCd:
+          type: string
+          description: 과금요소ID
+        rateDvCd:
+          type: string
+          description: 요율구분코드
+        rateAplyLvlCd:
+          type: string
+          description: 요율적용레벨코드
+        rateAplyDvCd:
+          type: string
+          description: 요율적용구분코드
+        rateAplyKdCd:
+          type: string
+          description: 요율적용유형코드
+        rateAplyUnitCd:
+          type: string
+          description: 요율적용단위구분코드
+        rateAplyUnit:
+          type: string
+          description: 요율적용단위
+        rate:
+          type: integer
+          description: 요율
+          format: double
+        initRateAplyUnitCd:
+          type: string
+          description: 초기요율적용단위구분코드
+        initRateAplyUnit:
+          type: integer
+          description: 초기요율적용단위
+        initRate:
+          type: integer
+          description: 초기요율
+          format: double
+        valdStrtDttm:
+          type: string
+          description: 유효시작일시
+        valdEndDttm:
+          type: string
+          description: 유효종료일시
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TrsDnisInfo:
+      type: object
+      properties:
+        dnis:
+          type: string
+          description: 회의연결번호
+        fullTelNo:
+          type: string
+          description: 전화번호
+        prefixNo:
+          type: string
+          description: 전화국번호
+        pofn:
+          type: string
+          description: 국번
+        lineNo:
+          type: string
+          description: 라인번호
+        dnisStatus:
+          type: string
+          description: 상태
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+    TsmCtrtInfo:
+      type: object
+      properties:
+        ctrtId:
+          type: integer
+          description: 계약ID (Auto Increment)
+        custId:
+          type: string
+          description: 고객ID
+        billAcntNo:
+          type: string
+          description: 청구계정번호
+        pymAcntNo:
+          type: string
+          description: 납부계정번호
+        valdEndDttm:
+          type: string
+          description: 유효종료일
+        valdStrtDttm:
+          type: string
+          description: 유효시작일
+        billStrtDttm:
+          type: string
+          description: 빌링시작일
+        ctrtSttsCd:
+          type: string
+          description: 계약상태코드
+        ctrtName:
+          type: string
+          description: 계약명
+        svcNo:
+          type: string
+          description: 서비스번호(DNIS)
+        ctrtChgResnCd:
+          type: string
+          description: 계약변경 사유코드
+        ctrtAppnt:
+          type: string
+          description: 계약 신청자
+        salesUsrId:
+          type: string
+          description: 계약 영업담당자
+        salesOrgId:
+          type: string
+          description: 계약 매출부서
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsmCtrtSvcInfo:
+      type: object
+      properties:
+        ctrtSvcId:
+          type: integer
+          description: 계약서비스ID (Auto Increment)
+          format: int32
+        ctrtId:
+          type: integer
+          description: 계약ID
+          format: int32
+        svcProdCd:
+          type: string
+          description: 서비스상품ID
+        svcProdDvCd:
+          type: string
+          description: 상품구분코드
+        svcSttsCd:
+          type: string
+          description: 서비스 상태
+        valdStrtDttm:
+          type: string
+          description: 유효시작일
+        valdEndDttm:
+          type: string
+          description: 유효종료일
+        svcSttsChngRsnCd:
+          type: string
+          description: 상태변경사유코드
+        svcSttsChngRsnDesc:
+          type: string
+          description: 상태변경사유
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsmCtrtSvcRate:
+      type: object
+      properties:
+        rateId:
+          type: integer
+          description: 요율식별 ID (Auto Increment)
+          format: int32
+        ctrtSvcId:
+          type: integer
+          description: 계약서비스ID
+          format: int32
+        ftrCd:
+          type: string
+          description: 서비스요소ID
+        rateDvCd:
+          type: string
+          description: 요금항목
+        rateAplyLvlCd:
+          type: string
+          description: 요율적용레벨코드
+        rateAplyDvCd:
+          type: string
+          description: 요율적용구분코드
+        rateAplyKdCd:
+          type: string
+          description: 요율적용유형코드
+        rateAplyUnitCd:
+          type: string
+          description: 요율적용단위구분코드
+        rateAplyUnit:
+          type: string
+          description: 요율적용단위
+        rate:
+          type: integer
+          description: 요율
+          format: double
+        initRateAplyUnitCd:
+          type: string
+          description: 초기요율적용단위구분코드
+        initRateAplyUnit:
+          type: integer
+          description: 초기요율적용단위
+        initRate:
+          type: integer
+          description: 초기요율
+          format: double
+        valdStrtDttm:
+          type: string
+          description: 유효시작일
+        valdEndDttm:
+          type: string
+          description: 유효종료일
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsmSvcAttendeesInfo:
+      required:
+      - svcResvId
+      - svcSeqNo
+      type: object
+      properties:
+        svcSeqNo:
+          type: string
+          description: 회의예약순번
+        svcResvId:
+          type: string
+          description: 회의예약ID
+        svcRecNo:
+          type: string
+          description: 서비스요청번호
+        attendName:
+          type: string
+          description: 참석자명
+        attendEmail:
+          type: string
+          description: 사용자 이메일
+        attendPhone:
+          type: string
+          description: 참석자 전화번호
+        attendUserDef:
+          type: string
+          description: 참석자 사용자설명
+        attendPin:
+          type: string
+          description: PIN 번호
+        attendConfType:
+          type: string
+          description: 회의유형
+        attendCallType:
+          type: string
+          description: 콜유형
+        attendTalkMode:
+          type: string
+          description: 대화모드
+        attendBillField:
+          type: string
+          description: 빌링필드
+        attendBillType:
+          type: string
+          description: 빌링유형
+        attendPartitionId:
+          type: string
+          description: 파티션ID
+        attendMultDialOrder:
+          type: string
+          description: 블래스트 다어얼번호 순선
+        attendUsrDef2:
+          type: string
+          description: 사용자정의2
+        attendUsrDef3:
+          type: string
+          description: 사용자정의3
+        attendUsrDef4:
+          type: string
+          description: 사용자정의4
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsmSvcDnisInfo:
+      required:
+      - dnis
+      - svcSeqNo
+      type: object
+      properties:
+        svcSeqNo:
+          type: string
+          description: 회의예약순번
+        dnis:
+          type: string
+          description: 회의연결번호
+        dnisDesc:
+          type: string
+          description: 설명
+        dnisLang:
+          type: string
+          description: 설정언어번호
+        dnisMsg:
+          type: string
+          description: 사용자정의메시지
+        dnisTreatment:
+          type: string
+          description: 트리트먼드
+        dnisExpDate:
+          type: string
+          description: DNIS 종료일자
+        dnisInfo2:
+          type: string
+          description: 메시지정보2
+        dnisInfo3:
+          type: string
+          description: 메시지정보3
+        dnisInfo4:
+          type: string
+          description: 메시지정보4
+        dnisPartitionId:
+          type: string
+          description: DNIS 파티션ID
+        dnisCompLogoMsg:
+          type: string
+          description: DNIS 회사로고메시지
+        dnisLangSelOrder:
+          type: string
+          description: DNIS 언어선택순서
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsmSvcInfo:
+      required:
+      - ctrtId
+      - ctrtSvcId
+      - custId
+      - groupId
+      - svcSeqNo
+      type: object
+      properties:
+        svcSeqNo:
+          type: string
+          description: 서비스 요청번호
+        groupId:
+          type: string
+          description: 그룹ID
+        ctrtSvcId:
+          type: string
+          description: 계약서비스ID
+        ctrtId:
+          type: string
+          description: 계약ID
+        custId:
+          type: string
+          description: 고객ID
+        memberId:
+          type: string
+          description: 주체자ID
+        svcResvId:
+          type: string
+          description: 회의예약ID
+        svcReqType:
+          type: string
+          description: 회의요청유형
+        svcName:
+          type: string
+          description: 회의명
+        svcBillCd:
+          type: string
+          description: 회의요금코드
+        svcConfCd:
+          type: string
+          description: 회의확정코드
+        svcAcntNo:
+          type: string
+          description: 서비스계정번호
+        svcConfTpLvl:
+          type: string
+          description: 회의유형레벨
+        svcConfDate:
+          type: string
+          description: 회의예약일
+        svcConfTime:
+          type: string
+          description: 회의시작시간
+        svcConfDuration:
+          type: string
+          description: 회의기간
+        svcConfParties:
+          type: string
+          description: 회의참석자수
+        svcAutoBreakDown:
+          type: string
+          description: 회의중당
+        svcAlertOptions:
+          type: string
+          description: 회의경보여부
+        svcPcodeType:
+          type: string
+          description: Pcode 유형
+        svcPcodeOne:
+          type: string
+          description: Pcode1 번호
+        svcPcodeOneMsg:
+          type: string
+          description: Pcode1 확인메시지
+        svcPcodeOneMode:
+          type: string
+          description: Pcode1 모드
+        svcPcodeOneItone:
+          type: string
+          description: Pcode1 Inbound 톤
+        svcPcodeOneOtone:
+          type: string
+          description: Pcode1 Outbound 톤
+        svcPcodeTwo:
+          type: string
+          description: Pcode2 번호
+        svcPcodeTwoMsg:
+          type: string
+          description: Pcode2 확인메시지
+        svcPcodeTwoMode:
+          type: string
+          description: Pcode2 모드
+        svcPcodeTwoItone:
+          type: string
+          description: Pcode2 Inbound 톤
+        svcPcodeTwoOtow:
+          type: string
+          description: 회의유형레벨
+        svcDetailFlag:
+          type: string
+          description: 회의 상세정보 설정 여부
+        svcPresetFlag:
+          type: string
+          description: 회의 설정 여부
+        svcCallFlow:
+          type: string
+          description: 회의 콜플로우
+        svcHostStrtConf:
+          type: string
+          description: HOST 회의주체 여부
+        svcConfUpdate:
+          type: string
+          description: 회의 갱신여부
+        svcLocalPinValid:
+          type: string
+          description: PIN 유효성 검사부여
+        svcPartitionId:
+          type: string
+          description: 파티션ID
+        svcMlpptype:
+          type: string
+          description: MLPP 유형
+        svcLinkFlag:
+          type: string
+          description: 링크플래그
+        svcSpecFlag:
+          type: string
+          description: 특별지침플래그
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsyEmpMast:
+      type: object
+      properties:
+        empNo:
+          type: string
+          description: 사번
+        useEndDate:
+          type: string
+          description: 사용종료일
+        useStartDate:
+          type: string
+          description: 사용시작일
+        empNm:
+          type: string
+          description: 사원명
+        empEnm:
+          type: string
+          description: 영문사원명
+        deptCd:
+          type: string
+          description: 부서코드
+        position:
+          type: string
+          description: 직위
+        respons:
+          type: string
+          description: 직책
+        norEmpYn:
+          type: string
+          description: 정직원여부
+        effDt:
+          type: string
+          description: 입사일자
+        expDt:
+          type: string
+          description: 퇴사일자
+        rno:
+          type: string
+          description: 주민등록번호
+        baseAddr:
+          type: string
+          description: 기본주소
+        addrDtl:
+          type: string
+          description: 상세주소
+        zipCd:
+          type: string
+          description: 우편번호
+        telNo:
+          type: string
+          description: 전화번호
+        mtelNo:
+          type: string
+          description: 휴대폰번호
+        email:
+          type: string
+          description: 이매일
+        dutyCd:
+          type: string
+          description: 직무구분코드
+        positionCd:
+          type: string
+          description: 직급구분코드
+        useYn:
+          type: string
+          description: 사용여부
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsyCodeGroup:
+      type: object
+      properties:
+        langType:
+          type: string
+          description: 언어
+        commonGroupCd:
+          type: string
+          description: 그룹코드
+        commonGroupName:
+          type: string
+          description: 그룹코드명
+        codeDesc1:
+          type: string
+          description: 설명1
+        codeDesc2:
+          type: string
+          description: 설명2
+        codeDesc3:
+          type: string
+          description: 설명3
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsyCodeDetail:
+      type: object
+      properties:
+        langType:
+          type: string
+          description: 언어
+        commonGroupCd:
+          type: string
+          description: 그룹코드
+        commonCd:
+          type: string
+          description: 공통코드
+        commonCdNm:
+          type: string
+          description: 코드명
+        codeDesc1:
+          type: string
+          description: 설명1
+        codeDesc2:
+          type: string
+          description: 설명2
+        codeDesc3:
+          type: string
+          description: 설명3
+        orderNo:
+          type: string
+          description: 코드순서
+        useYn:
+          type: string
+          description: 사용여부
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsyCodeList:
+      type: object
+      properties:
+        langType:
+          type: string
+          description: 언어
+        commonGroupCd:
+          type: string
+          description: 그룹코드
+        commonCd:
+          type: string
+          description: 공통코드
+        commonCdNm:
+          type: string
+          description: 코드명
+    TsyUserLoginHist:
+      type: object
+      properties:
+        loginDttm:
+          type: string
+          description: '로그인시간 (기본값: 현재시간)'
+          format: date-time
+        usrId:
+          type: string
+          description: 사용자ID
+        tokenId:
+          type: string
+          description: 토큰 ID
+        remoteAddr:
+          type: string
+          description: 원격 IP 주소
+        logoutDttm:
+          type: string
+          description: 로그아웃 시간
+          format: date-time
+        logoutStatus:
+          type: string
+          description: 로그아웃상태
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsyUser:
+      type: object
+      properties:
+        userId:
+          type: string
+          description: 사용자ID
+        password:
+          type: string
+          description: 비밀번호
+        userName:
+          type: string
+          description: 사용자명
+        userGroupId:
+          type: string
+          description: 기본사용자그룹
+        orgId:
+          type: string
+          description: 조직ID
+        crrTp:
+          type: string
+          description: 조직구분
+        empNo:
+          type: string
+          description: 사번
+        telNo:
+          type: string
+          description: 전화번호
+        mtelNo:
+          type: string
+          description: 휴대폰번호
+        eMail:
+          type: string
+          description: EMAIL
+        ipBandwidth:
+          type: string
+          description: 허용 IP대역
+        loginFailCount:
+          type: integer
+          description: 로그인실패횟수
+        passwordDueDate:
+          type: string
+          description: 비밀번호만료일
+        passwordChangePeriod:
+          type: integer
+          description: 비밀번호교환주기
+        lastLoginDate:
+          type: string
+          description: 최종로그인일자
+        lastLoginTime:
+          type: string
+          description: 최종로그인일시
+        accountLock:
+          type: string
+          description: 계정잠금여부
+        password1:
+          type: string
+          description: 이전비밀번호1
+        password2:
+          type: string
+          description: 이전비밀번호2
+        useYn:
+          type: string
+          description: 사용여부
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsyUserGroup:
+      type: object
+      properties:
+        userGroupId:
+          type: string
+          description: 사용자그룹ID
+        userGroupName:
+          type: string
+          description: 사용자그룹명
+        userGroupLevel:
+          type: string
+          description: 사용자그룹레벨
+        mainView:
+          type: string
+          description: MAIN 화면
+        description:
+          type: string
+          description: 설명
+        displayOrder:
+          type: integer
+          description: 출력순서
+        operatorId:
+          type: string
+          description: 운영자ID
+        creationDate:
+          type: string
+          description: 등록일
+          format: date-time
+        updateDate:
+          type: string
+          description: 수정일
+          format: date-time
+    TsyUserGroupAuth:
+      type: object
+      properties:
+        userGroupId:
+          type: string
+          description: 사용자그룹ID
+        menuNo:
+          type: integer
+          description: 메뉴번호
+        authRYn:
+          type: string
+          description: 읽기권한
+        authWYn:
+          type: string
+          description: 쓰기권한
+        authEYn:
+          type: string
+          description: 실행권한
+        userId:
+          type: string
+          description: 사용자ID
+    TsyMenu:
+      type: object
+      properties:
+        menuNo:
+          type: integer
+          description: 메뉴번호
+          format: int32
+        menuName:
+          type: string
+          description: 메뉴명
+        upMenuNo:
+          type: integer
+          description: 상위메뉴번호
+        viewPath:
+          type: string
+          description: URL
+        imgPath:
+          type: string
+          description: 이미지경로
+        helpFilename:
+          type: string
+          description: 도움말파일명
+        stepNo:
+          type: integer
+          description: 번호순서
+        displayOrder:
+          type: integer
+          description: 출력순서
+        description:
+          type: string
+          description: 설명
+        isfolder:
+          type: string
+          description: 폴더여부
+        useYn:
+          type: string
+          description: 사용여부

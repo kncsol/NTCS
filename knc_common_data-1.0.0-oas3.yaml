@@ -1,0 +1,409 @@
+---
+openapi: 3.0.0
+info:
+  title: KNC Common Data
+  description: |
+    KnC Common Data'
+  version: 1.0.0-oas3
+servers:
+- url: /
+paths: {}
+components:
+  schemas:
+    MessageId:
+      type: string
+      description: Unique string used to identify the request message. Used for message tracking purposes
+    MessageTimeStamp:
+      type: string
+      description: Represents both a date and a time (yyyyMMddHHmmss-ns)
+    ApiMethod:
+      type: string
+      description: 'API standard method : only support post, put, get'
+    ServiceId:
+      type: string
+      description: Unique string used to identify the request service
+    OperationId:
+      type: string
+      description: Unique string used to identify the operation.
+    Offset:
+      type: integer
+      format: int32
+    Limit:
+      type: integer
+      description: A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.
+      format: int32
+      default: 10
+    Binary:
+      type: string
+      format: binary
+    Bytes:
+      type: string
+      format: byte
+    Date:
+      pattern: ^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$
+      type: string
+      format: date
+    DateTime:
+      type: string
+      format: date-time
+    Double:
+      type: number
+      format: double
+    Float:
+      type: number
+      format: float
+    Int32:
+      type: integer
+      format: int32
+    Uinteger:
+      minimum: 0
+      type: integer
+    Uint16:
+      maximum: 65535
+      minimum: 0
+      type: integer
+    Uint32:
+      maximum: 4294967295
+      minimum: 0
+      type: integer
+    Uint64:
+      maximum: 18446744073709552000
+      minimum: 0
+      type: integer
+    Uri:
+      type: string
+    TimeZone:
+      type: string
+    DayOfWeek:
+      maximum: 7
+      minimum: 1
+      type: integer
+      description: integer between and including 1 and 7 denoting a weekday. 1 shall indicate Monday, and the subsequent weekdays shall be indicated with the next higher numbers. 7 shall indicate Sunday.
+    TimeOfDay:
+      type: string
+      description: S'tring with format partial-time or full-time as defined in clause 5.6 of IETF RFC 3339. Examples, 20:15:00, 20:15:00-08:00 (for 8 hours behind UTC).'
+    DurationSec:
+      type: integer
+    Int64:
+      type: integer
+      format: int64
+    Ipv4Addr:
+      pattern: ^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$
+      type: string
+      example: 198.51.100.1
+    Ipv6Addr:
+      type: string
+      example: 2001:db8:85a3::8a2e:370:7334
+      allOf:
+      - pattern: ^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$
+      - pattern: ^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$
+    Ipv6Prefix:
+      type: string
+      example: 2001:db8:abcd:12::0/64
+      allOf:
+      - pattern: ^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))(\/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))$
+      - pattern: ^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))(\/.+)$
+    MacAddr48:
+      pattern: ^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$
+      type: string
+    PatchOperation:
+      type: string
+      enum:
+      - add
+      - copy
+      - move
+      - remove
+      - replace
+      - test
+    UriScheme:
+      type: string
+      enum:
+      - http
+      - https
+    ChangeType:
+      type: string
+      enum:
+      - ADD
+      - MOVE
+      - REMOVE
+      - REPLACE
+    HttpMethod:
+      type: string
+      enum:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - PATCH
+      - OPTIONS
+      - HEAD
+      - CONNECT
+      - TRACE
+    NotifyLevel:
+      type: string
+      enum:
+      - CRITICAL
+      - MAJOR
+      - MINOR
+      - ERROR
+      - WARNING
+      - NOTICS
+      - INFO
+    NullValue:
+      type: string
+      enum:
+      - null
+    Link:
+      type: object
+      properties:
+        href:
+          $ref: '#/components/schemas/Uri'
+    OperationResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/Uri'
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          $ref: '#/components/schemas/Uri'
+        cause:
+          type: string
+        invalidParams:
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+    InvalidParam:
+      required:
+      - param
+      type: object
+      properties:
+        param:
+          type: string
+        reason:
+          type: string
+    NotifiyItem:
+      type: object
+      properties:
+        NotifyLevel:
+          $ref: '#/components/schemas/NotifyLevel'
+        Message:
+          type: string
+        Reason:
+          type: string
+        Action:
+          type: string
+    Property:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+        required:
+          type: boolean
+        regex:
+          type: string
+        value:
+          type: string
+  responses:
+    "400":
+      description: Bad request
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "401":
+      description: Unauthorized
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "403":
+      description: Forbidden
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "404":
+      description: Not Found
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "405":
+      description: Method Not Allowed
+    "408":
+      description: Request Timeout
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "406":
+      description: 406 Not Acceptable
+    "409":
+      description: Conflict
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "410":
+      description: Gone
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "411":
+      description: Length Required
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "412":
+      description: Precondition Failed
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "413":
+      description: Payload Too Large
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "414":
+      description: URI Too Long
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "415":
+      description: Unsupported Media Type
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "429":
+      description: Too Many Requests
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "500":
+      description: Internal Server Error
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "501":
+      description: Not Implemented
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "503":
+      description: Service Unavailable
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    "504":
+      description: Gateway Timeout
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+    default:
+      description: Generic Error
+  parameters:
+    limitParam:
+      name: limit
+      in: query
+      description: 페이지당 최대 레코드 건수
+      required: true
+      style: form
+      explode: true
+      schema:
+        type: integer
+        format: int32
+        default: 100
+    offsetParam:
+      name: limit
+      in: query
+      description: 페이지 번호
+      required: true
+      style: form
+      explode: true
+      schema:
+        type: integer
+        format: int32
+    xApplication:
+      name: X-APPLICATION
+      in: header
+      description: 어플리케이션을 식별할 수 있는 유일한 ID
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+        default: v1
+    xAuthToken:
+      name: X-AUTH-TOKEN
+      in: header
+      description: 인증 토큰키
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    xChannel:
+      name: X-CHANNEL
+      in: header
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+        default: channel
+    xLogKey:
+      name: X-LOG_KEY
+      in: header
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+        default: "20210101"
+    xLangSet:
+      name: X-LANG_SET
+      in: header
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+        default: kr
+    xMid:
+      name: X-MID
+      in: header
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+        default: MD0001

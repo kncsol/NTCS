@@ -1,0 +1,130 @@
+openapi: 3.0.0
+info:
+  description: |
+    NTCS administrator OpenAPIs.
+  version: 1.0.0-oas3
+  title: NTCS administrator - Account Management
+  contact:
+    email: contact@examples.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  - url: '/'
+tags:
+  - name: 회원관리
+    description: 회원관리
+
+paths:
+#
+# 회원관리
+#
+  /account:
+    post:
+      tags:
+      - 회원관리
+      summary: '신규회원 등록'
+      operationId: addAccount
+      parameters:
+        - $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/parameters/xAuthToken'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountRequestData'
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/400'
+        '408':
+          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/408'
+    put:
+      tags:
+      - 회원관리    
+      summary: '회원정보 수정'
+      operationId: updateAccount
+      parameters:
+        - in: query
+          name: accountId
+          required: true
+          schema:
+            type: string
+        - $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/parameters/xAuthToken'
+
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountRequestData'
+
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/400'
+        '408':
+          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/408'
+          
+  /account/list:
+    get:
+      tags:
+      - 회원관리    
+      summary: '회원유형별 회원정보 조회'
+      description: '회원유형별 회원정보를 조회한다. 검색건수는 최대 100건으로 제한한다.'
+      operationId: inquiryAccountByType
+      parameters:
+        - in: query
+          name: accountType
+          required: true
+          schema:
+            type: string
+        - $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/parameters/offsetParam'
+        - $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/parameters/xAuthToken'
+
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/problem+json:
+             schema:
+              $ref: '#/components/schemas/AccountResponseData'          
+        '400':
+          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/400'
+        '408':
+          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/408'
+
+components:
+  schemas:
+    TransactionId:
+      type: string
+      description: 'Unique string used to identify the request message. Used for message
+        tracking purposes'
+    TransactionTimeStamp:
+      type: string
+      description: Represents both a date and a time (yyyyMMddHHmmss.ns)
+      example: '20210101000000.123'
+      
+#
+#
+#
+    AccountData:
+      description: 회원관리 등록.수정, 조회 요청 데이터
+      type: object
+      properties:
+        transId:
+          $ref: '#/components/schemas/TransactionId'
+        transTimeStamp:
+          $ref: '#/components/schemas/TransactionTimeStamp'
+        messageBody:
+          type: object
+          properties:
+            message_data:
+              type: array
+              items: 
+                $ref: 'https://api.swaggerhub.com/apis/k9215/ntcs_reference_data/1.0.0-oas3#/components/schemas/TcmAccount'
+    
+    AccountRequestData:
+      $ref: '#/components/schemas/AccountData'
+    AccountResponseData:
+      $ref: '#/components/schemas/AccountData'
