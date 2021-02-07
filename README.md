@@ -24,7 +24,7 @@ API Version: 2021.01
 + 요금관리
 + 상품관리
 + ***시스템관리***
-    * [코드관리](ttps://editor.swagger.io/?url=https://raw.githubusercontent.com/kncsol/NTCS/master/ntcs_admin_commoncode.yaml)
+    * [코드관리](https://editor.swagger.io/?url=https://raw.githubusercontent.com/kncsol/NTCS/master/ntcs_admin_commoncode.yaml)
 
 
 
