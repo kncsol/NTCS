@@ -10,23 +10,23 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 servers:
-  - url: '/'
+  - url: 'www.examples.com/admin/v1'
 tags:
-  - name: È¸¿ø°ü¸®
-    description: È¸¿ø°ü¸®
+  - name: íšŒì›ê´€ë¦¬
+    description: íšŒì›ê´€ë¦¬
 
 paths:
 #
-# È¸¿ø°ü¸®
+# íšŒì›ê´€ë¦¬
 #
   /account:
     post:
       tags:
-      - È¸¿ø°ü¸®
-      summary: '½Å±ÔÈ¸¿ø µî·Ï'
+      - íšŒì›ê´€ë¦¬
+      summary: 'ì‹ ê·œíšŒì› ë“±ë¡'
       operationId: addAccount
       parameters:
-        - $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/parameters/xAuthToken'
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
       requestBody:
         content:
           application/json:
@@ -36,13 +36,13 @@ paths:
         '200':
           description: successful operation
         '400':
-          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/400'
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
         '408':
-          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/408'
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
     put:
       tags:
-      - È¸¿ø°ü¸®    
-      summary: 'È¸¿øÁ¤º¸ ¼öÁ¤'
+      - íšŒì›ê´€ë¦¬   
+      summary: 'íšŒì›ì •ë³´ ìˆ˜ì •'
       operationId: updateAccount
       parameters:
         - in: query
@@ -50,7 +50,7 @@ paths:
           required: true
           schema:
             type: string
-        - $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/parameters/xAuthToken'
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
 
       requestBody:
         content:
@@ -62,16 +62,16 @@ paths:
         '200':
           description: successful operation
         '400':
-          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/400'
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
         '408':
-          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/408'
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
           
   /account/list:
     get:
       tags:
-      - È¸¿ø°ü¸®    
-      summary: 'È¸¿øÀ¯Çüº° È¸¿øÁ¤º¸ Á¶È¸'
-      description: 'È¸¿øÀ¯Çüº° È¸¿øÁ¤º¸¸¦ Á¶È¸ÇÑ´Ù. °Ë»ö°Ç¼ö´Â ÃÖ´ë 100°ÇÀ¸·Î Á¦ÇÑÇÑ´Ù.'
+      - íšŒì›ê´€ë¦¬   
+      summary: 'íšŒì›ìœ í˜•ë³„ íšŒì›ì •ë³´ ì¡°íšŒ'
+      description: 'íšŒì›ìœ í˜•ë³„ íšŒì›ì •ë³´ë¥¼ ì¡°íšŒí•œ. ê²€ìƒ‰ê±´ìˆ˜ëŠ” ìµœëŒ€ 100ê±´ìœ¼ë¡œ ì œí•œí•œë‹¤.'
       operationId: inquiryAccountByType
       parameters:
         - in: query
@@ -79,8 +79,8 @@ paths:
           required: true
           schema:
             type: string
-        - $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/parameters/offsetParam'
-        - $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/parameters/xAuthToken'
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/offsetParam'
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
 
       responses:
         '200':
@@ -90,9 +90,9 @@ paths:
              schema:
               $ref: '#/components/schemas/AccountResponseData'          
         '400':
-          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/400'
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
         '408':
-          $ref: 'https://api.swaggerhub.com/apis/k9215/knc_common_data/1.0.0-oas3#/components/responses/408'
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
 
 components:
   schemas:
@@ -109,7 +109,7 @@ components:
 #
 #
     AccountData:
-      description: È¸¿ø°ü¸® µî·Ï.¼öÁ¤, Á¶È¸ ¿äÃ» µ¥ÀÌÅÍ
+      description: íšŒì›ê´€ë¦¬ ë§ˆìŠ¤í„° ë°ì´í„°
       type: object
       properties:
         transId:
@@ -122,7 +122,7 @@ components:
             message_data:
               type: array
               items: 
-                $ref: 'https://api.swaggerhub.com/apis/k9215/ntcs_reference_data/1.0.0-oas3#/components/schemas/TcmAccount'
+                $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/components/schemas/TcmAccount'
     
     AccountRequestData:
       $ref: '#/components/schemas/AccountData'
