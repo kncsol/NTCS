@@ -23,7 +23,8 @@ API Version: 2021.01
 + 예약관리
 + 요금관리
 + 상품관리
-+ ***시스템관리***
++ ***시스템관리***  
+    * [사용자관리](https://editor.swagger.io/?url=https://raw.githubusercontent.com/kncsol/NTCS/master/ntcs_admin_users.yaml)
     * [코드관리](https://editor.swagger.io/?url=https://raw.githubusercontent.com/kncsol/NTCS/master/ntcs_admin_commoncode.yaml)
 
 
