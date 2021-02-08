@@ -1,0 +1,172 @@
+openapi: 3.0.0
+info:
+  description: |
+    NTCS administrator OpenAPIs.
+  version: 1.0.0-oas3
+  title: NTCS administrator - System Management/Users
+  contact:
+    email: contact@examples.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  - url: 'www.examples.com/admin/v1'
+tags:
+  - name: 운영자관리
+    description: 운영자 관리
+  - name: 로그인
+
+paths:
+  /user/login:
+    post:
+      tags:
+      - 로그인
+      summary: '운영자 로그인'
+      operationId: loginUser
+      parameters:
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/schemas/LogInRequest'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/schemas/LogInResponse'      
+        '400':
+          description: Invalid userId/password supplied
+          content:
+            application/json:
+              schema:
+                $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/schemas/HttpErrorResponse'
+  /user/logout:
+    post:
+      tags:
+      - 로그인
+      summary: '운영자 로그인'
+      operationId: logOutUser
+      parameters:
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+      responses:
+        '200':
+          description: successful operation     
+        '400':
+          description: Invalid userId/password supplied
+          content:
+            application/json:
+              schema:
+                $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/schemas/HttpErrorResponse'                
+#
+# 운영자 관리
+#
+  /management/user:
+    post:
+      tags:
+      - 운영자관리
+      summary: '운영자 정보 등록'
+      operationId: addUsers
+      parameters:
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequestData'
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
+        '408':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
+    put:
+      tags:
+      - 운영자관리
+      summary: '운영자 정보 수정'
+      operationId: updateUser
+      parameters:
+        - in: query
+          name: userId
+          required: true
+          schema:
+            type: string
+          
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequestData'
+
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
+        '408':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
+    get:
+      tags:
+      - 운영자관리 
+      summary: '운영자 정보 조회'
+      description: '운영자 정보를 검색한다.'
+      operationId: inquiryUserById
+      parameters:
+        - in: query
+          name: userId
+          required: true
+          schema:
+            type: string
+            
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/problem+json:
+             schema:
+              $ref: '#/components/schemas/UserResponseData'          
+        '400':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
+        '408':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
+
+components:
+  schemas:
+    TransactionId:
+      type: string
+      description: 'Unique string used to identify the request message. Used for message
+        tracking purposes'
+    TransactionTimeStamp:
+      type: string
+      description: Represents both a date and a time (yyyyMMddHHmmss.ns)
+      example: '20210101000000.123'
+#
+#
+#
+    UserData:
+      description: 운영자 마스터 데이터
+      type: object
+      properties:
+        transId:
+          $ref: '#/components/schemas/TransactionId'
+        transTimeStamp:
+          $ref: '#/components/schemas/TransactionTimeStamp'
+        messageBody:
+          type: object
+          properties:
+            message_data:
+              type: array
+              items: 
+                $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/components/schemas/TsyUser'
+    
+    UserRequestData:
+      $ref: '#/components/schemas/UserData'
+    UserResponseData:
+      $ref: '#/components/schemas/UserData'

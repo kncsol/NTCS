@@ -119,7 +119,17 @@ components:
         messageBody:
           type: object
           properties:
-            message_data:
+            recordsTotal:
+              description: 최대 레코드 건수
+              type: integer
+              format: int32
+              minimum: 0
+            recordsFiltered:
+              description: 필터링된 레코드 건수.
+              type: integer
+              format: int32
+              minimum: 0
+            data:
               type: array
               items: 
                 $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/components/schemas/TcmAccount'

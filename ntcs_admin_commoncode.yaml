@@ -12,9 +12,8 @@ info:
 servers:
   - url: 'www.examples.com/admin/v1'
 tags:
-  - name: 공통코드
+  - name: 공통코드 관리
     description: 공통코드 관리
-
 paths:
 #
 # 공통코드 관리
@@ -43,7 +42,7 @@ paths:
       tags:
       - 공통코드  
       summary: '공통코드 수정'
-      operationId: updateAccount
+      operationId: updateCommonCode
       parameters:
         - in: query
           name: langType
@@ -83,9 +82,9 @@ paths:
     get:
       tags:
       - 공통코드 
-      summary: '코드그룹별 공통코드 조회'
-      description: '코드그룹에 대한 공통코드 정보를 검색한다. 공통코드 전체 컬럼정보가 검색된다.'
-      operationId: inquiryAccountByType
+      summary: '코드리스트 조회 (Simple)'
+      description: 'Web Page 로딩 시, 공통코드 설정을 위해서 특정 코드그룹에 대한 코드 정보를 검색한다.'
+      operationId: inquirySimpleCodeList
       parameters:
         - in: query
           name: langType
@@ -109,12 +108,86 @@ paths:
           content:
             application/problem+json:
              schema:
+              $ref: '#/components/schemas/CommonCodeSimpleList'          
+        '400':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
+        '408':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
+  
+  /management/code/list:
+    get:
+      tags:
+        - 공통코드 
+      summary: '코드그룹별 상세 코드 리스트 조회'
+      description: '코드그룹에 대한 공통코드 상세정보 조회. 공통코드 전체 컬럼정보가 검색된다.'
+      operationId: inquiryCommonCodeList
+      parameters:
+        - in: query
+          name: langType
+          description: '언어 (기본값: KOR)'
+          required: true
+          schema:
+            type: string
+            default: KOR
+            
+        - in: query
+          name: commonGroupCd
+          required: true
+          schema:
+            type: string
+            
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/problem+json:
+             schema:
               $ref: '#/components/schemas/CommonCodeResponseData'          
         '400':
           $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
         '408':
           $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'
 
+  /management/code/detail:
+    get:
+      tags:
+        - 공통코드 
+      summary: '특정 코드에 대한 상세정보 조회'
+      description: '특정 코드에 대한  상세정보를 검색한다. 코드 전체 컬럼정보가 검색된다.'
+      operationId: inquiryCommonCodeDetail
+      parameters:
+        - in: query
+          name: langType
+          description: '언어 (기본값: KOR)'
+          required: true
+          schema:
+            type: string
+            default: KOR           
+        - in: query
+          name: commonGroupCd
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: commonCd
+          required: true
+          schema:
+            type: string            
+            
+        - $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/parameters/xAuthToken'
+
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/problem+json:
+             schema:
+              $ref: '#/components/schemas/CommonCodeResponseData'          
+        '400':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/400'
+        '408':
+          $ref: 'knc_common_data-1.0.0-oas3.yaml#/components/responses/408'   
 components:
   schemas:
     TransactionId:
@@ -125,8 +198,17 @@ components:
       type: string
       description: Represents both a date and a time (yyyyMMddHHmmss.ns)
       example: '20210101000000.123'
+
 #
+# CommCodeList
 #
+    CommonCodeSimpleList:
+      description: 단순 공통코드 마스터 데이터
+      type: array
+      items:
+        $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/components/schemas/TsyCodeList'
+#
+# CommonCode
 #
     CommonCodeData:
       description: 공통코드 마스터 데이터
@@ -139,7 +221,17 @@ components:
         messageBody:
           type: object
           properties:
-            message_data:
+            recordsTotal:
+              description: 최대 레코드 건수
+              type: integer
+              format: int32
+              minimum: 0
+            recordsFiltered:
+              description: 필터링된 레코드 건수.
+              type: integer
+              format: int32
+              minimum: 0          
+            data:
               type: array
               items: 
                 $ref: 'ntcs_reference_data-1.0.0-oas3.yaml#/components/schemas/TsyCodeDetail'

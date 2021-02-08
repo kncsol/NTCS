@@ -158,6 +158,30 @@ components:
       properties:
         href:
           $ref: '#/components/schemas/Uri'
+#
+# Login 
+#
+    LogInRequest:
+      type: object
+      properties:
+        usrLoginId:
+          type: string
+        usrPwd:
+          type: string
+#
+# LogIn Response
+#
+    LogInResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        refresh_token:
+          type: string
+    
+#
+# HTTP Operaton Successful Response
+#
     OperationResponse:
       type: object
       properties:
@@ -168,6 +192,48 @@ components:
           type: string
         message:
           type: string
+
+#
+# HTTP Error Response
+#
+    HttpErrorResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+          description: HTTP status code 400
+        path:
+          type: string
+          description: Request path
+        timestamp:
+          type: string
+          description: 에러발생시간 (yyyyMMddHHmmss)
+        result:
+            $ref: '#/components/schemas/ErrorResult'
+
+    ErrorResult:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Error 코드 메시지
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorInfo'
+    ErrorInfo:
+      type: object
+      properties:
+        message:
+          type: string
+        objId:
+          type: string
+        objValue:
+          type: string
+#
+# ProblemDetails
+#          
     ProblemDetails:
       type: object
       properties:
@@ -188,6 +254,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvalidParam'
+       
     InvalidParam:
       required:
       - param
